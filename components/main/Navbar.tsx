@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   motion,
   AnimatePresence,
@@ -14,15 +14,17 @@ import { Socials } from "@/constants";
 const Navbar = () => {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(true);
+  const prevScrollY = useRef(0); 
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
-      let direction = current - scrollYProgress.getPrevious();
+      const direction = current - prevScrollY.current;
+      prevScrollY.current = current;
 
       if (scrollYProgress.get() < 0.05) {
         setVisible(true);
       } else {
-        setVisible(direction < 0);
+        setVisible(direction < 0); 
       }
     }
   });
