@@ -12,21 +12,22 @@ import { cn } from "@/lib/utils";
 import { Socials } from "@/constants";
 
 const Navbar = () => {
-  const { scrollYProgress } = useScroll();
-  const [visible, setVisible] = useState(true);
-  const prevScrollY = useRef(0); 
+  const { scrollY } = useScroll();
+  const [navVisible, setNavVisible] = useState(true);
+  const [socialAndLogoVisible, setSocialAndLogoVisible] = useState(true); 
+  const prevScrollY = useRef(0);
 
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    if (typeof current === "number") {
-      const direction = current - prevScrollY.current;
-      prevScrollY.current = current;
+  useMotionValueEvent(scrollY, "change", (current) => {
+    const direction = current - prevScrollY.current;
+    prevScrollY.current = current;
 
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(true);
-      } else {
-        setVisible(direction < 0); 
-      }
+    if (current < 100) {
+      setNavVisible(true);
+    } else {
+      setNavVisible(direction < 0);
     }
+
+    setSocialAndLogoVisible(current <= 10);
   });
 
   const navItems = [
@@ -38,7 +39,7 @@ const Navbar = () => {
   return (
     <>
       <AnimatePresence mode="wait">
-        {visible && (
+        {navVisible && (
           <motion.div
             key="navbar"
             initial={{ opacity: 0, y: -100 }}
@@ -55,8 +56,6 @@ const Navbar = () => {
               border: "1px solid rgba(255, 255, 255, 0.125)",
             }}
           >
-            <Link href="#about-me" className="flex flex-row items-center"></Link>
-
             <div className="flex items-center justify-center space-x-4">
               {navItems.map((navItem, idx) => (
                 <Link
@@ -73,24 +72,51 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="fixed top-16 right-10 flex gap-5 z-[5001]">
-        {Socials.map((social) => (
-          <a
-            key={social.name}
-            href={social.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity"
-          >
-            <Image
-              src={social.src}
-              alt={social.name}
-              width={24}
-              height={24}
+
+      <AnimatePresence mode="wait">
+        {socialAndLogoVisible && (
+          <>
+
+            <motion.img
+              key="logo"
+              src="/Logo.png"
+              alt="Logo"
+              className="absolute top-8 left-10 w-20 h-20 object-contain z-[30]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
             />
-          </a>
-        ))}
-      </div>
+
+            <motion.div
+              key="social-icons"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed top-14 right-10 flex gap-5 z-[5001]"
+            >
+              {Socials.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${social.name}`}
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  <Image
+                    src={social.src}
+                    alt={social.name}
+                    width={24}
+                    height={24}
+                  />
+                </a>
+              ))}
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };
