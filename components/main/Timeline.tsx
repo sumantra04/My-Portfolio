@@ -6,7 +6,15 @@ import { motion } from 'framer-motion'
 export default function Timeline() {
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-16">
-      <h2 className="text-3xl text-white font-bold mb-12 text-center">Experience</h2>
+    <motion.h2
+    initial={{ opacity: 0, x: -120 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1, ease: 'easeOut' }}
+    className="text-5xl md:text-6xl text-white font-extrabold mb-16 text-center">
+    <span className="bg-gradient-to-r from-cyan-500 to-pink-500 text-transparent bg-clip-text">
+    Experience
+    </span>
+    </motion.h2>
       <div className="relative">
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300 dark:border-gray-600" />
 
