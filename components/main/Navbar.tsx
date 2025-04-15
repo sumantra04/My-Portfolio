@@ -81,7 +81,7 @@ const Navbar = () => {
               key="logo"
               src="/Logo.png"
               alt="Logo"
-              className="absolute top-8 left-10 w-20 h-20 object-contain z-[30]"
+              className="absolute top-4 left-10 w-28 h-28 object-contain z-[30]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -108,8 +108,8 @@ const Navbar = () => {
                   <Image
                     src={social.src}
                     alt={social.name}
-                    width={24}
-                    height={24}
+                    width={30}
+                    height={30}
                   />
                 </a>
               ))}
