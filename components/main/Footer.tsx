@@ -20,16 +20,22 @@ const Footer = () => {
           If you're building something great and need a reliable developer, let’s connect and bring your vision to life.
         </p>
         <div className="mt-6">
-          <a href="mailto:sumantrab.04@gmail.com" className="relative z-[60]">
-            <button
-              className="flex items-center justify-center bg-gradient-to-r from-cyan-500 to-pink-500 text-white px-6 py-3 rounded-lg mt-6 transition-all duration-300 hover:scale-105 focus:outline-none"
-              aria-label="Send email to work together"
+          <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=sumantrab.04@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative z-[60]"
+          >
+          <button
+            className="flex items-center justify-center bg-gradient-to-r from-cyan-500 to-pink-500 text-white px-6 py-3 rounded-lg mt-6 transition-all duration-300 hover:scale-105 focus:outline-none"
+            aria-label="Compose email to work together"
             >
-              <FaLocationArrow className="mr-2" />
-              Let’s work together
-            </button>
-          </a>
-        </div>
+      <FaLocationArrow className="mr-2" />
+      Let’s work together
+    </button>
+  </a>
+</div>
+
       </div>
 
       <div className="flex flex-col md:flex-row justify-between items-center px-6 mt-16">
