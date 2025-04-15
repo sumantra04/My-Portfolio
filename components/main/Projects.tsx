@@ -8,10 +8,24 @@ const projects = [
     description:
       "Developed a sleek and responsive website for my college cybersecurity club using HTML, CSS, Javascript, React, and Node.js.",
     github: "https://github.com/your/cyber-sleuths",
-    live: "https://cyber-sleuths.vercel.app/",
+    live: "https://cybersleuths.co.in/",
     tags: [
       { name: "react", color: "text-blue-400" },
-      { name: "node", color: "text-green-400" },
+      { name: "node.js", color: "text-green-400" },
+    ],
+  },
+  {
+    src: "/thinkiot.png",
+    title: "Think-IOT Website",
+    description:
+      "Created a dynamic website for my college IOT lab (Think-IOT) using HTML, CSS, JavaScript, React.js, Tailwind CSS, Vite, and Node.js.",
+    github: "https://thinkiot.vercel.app",
+    live: "",
+    tags: [
+      { name: "react", color: "text-pink-400" },
+      { name: "Typescript", color: "text-pink-400" },
+      { name: "node.js", color: "text-purple-400" },
+      { name: "next.js", color: "text-pink-400" },
     ],
   },
   {
