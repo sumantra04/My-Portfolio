@@ -80,9 +80,9 @@ I built this portfolio to:
 
 If you'd like to connect or collaborate, feel free to reach out:
 
-- **Email**: [your-email@example.com]
-- **LinkedIn**: [your-linkedin-profile]
-- **GitHub**: [https://github.com/sumantra04](https://github.com/sumantra04)
+- **Email**: [sumantrab.04@gmail.com]
+- **LinkedIn**: [www.linkedin.com/in/sumantra04]
+- **GitHub**: [https://github.com/sumantra04]
 
 ---
 
