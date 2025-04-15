@@ -1,6 +1,6 @@
 import React from "react";
 import HeroContent from "../sub/HeroContent";
-import Timeline from "../main/Timeline";
+import Timeline from "./Timeline";
 const Hero = () => {
   return (
     <div className="relative flex flex-col h-full w-full" id="about-me">
