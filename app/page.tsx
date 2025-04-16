@@ -1,15 +1,16 @@
 import Hero from "@/components/main/Hero";
-import Projects from "@/components/sub/ProjectsData";
 import Skills from "@/components/main/Skills";
-import Image from "next/image";
+import Timeline from "@/components/main/Timeline"; 
+import ProjectSection from "@/components/main/ProjectCard";
 
 export default function Home() {
   return (
     <main className="h-full w-full">
       <div className="flex flex-col gap-5">
         <Hero />
+        <Timeline />
         <Skills />
-        <Projects />
+        <ProjectSection />
       </div>
     </main>
   );
