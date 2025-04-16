@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function Timeline() {
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-16">
+    <div className="w-full max-w-4xl mx-auto px-4 py-16" id="experience">
     <motion.h2
     initial={{ opacity: 0, x: -120 }}
     whileInView={{ opacity: 1, x: 0 }}
