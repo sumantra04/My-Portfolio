@@ -4,7 +4,6 @@ import { Socials } from "@/constants";
 import { FaLocationArrow } from "react-icons/fa";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
 const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10 text-white relative z-[50]" id="contact">
